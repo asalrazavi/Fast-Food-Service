@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sign in</title>
+    <link href="./SignUp.css" rel="stylesheet" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="login-box">
+      <h2>Sign in</h2>
+      <form autocomplete="off">
+        <div class="user-box">
+          <input type="text" id="firstname" name="firstname" required />
+          <label for="firstname">Firstname</label>
+        </div>
+        <div class="user-box">
+          <input type="text" id="lastname" name="lastname" required />
+          <label for="lastname">Lastname</label>
+        </div>
+        <div class="user-box">
+          <input type="text" id="phonenumber" name="phonenumber" required />
+          <div id="phone_error">Please fill up your phonenumber</div>
+          <label for="phonenumber">PhoneNumber</label>
+        </div>
+        <div class="user-box">
+          <input type="email" id="email" name="email" required />
+          <div id="email_error">Please fill up your Email</div>
+          <label for="email">Email</label>
+        </div>
+        <div class="user-box d-flex align-items-center">
+          <input type="password" id="password" name="password" required />
+          <i
+            class="fa fa-eye"
+            id="togglePassword"
+            aria-hidden="true"
+            style="border-bottom: 1px solid #243b55; margin-bottom: 0.1rem"
+          ></i>
+          <label for="password">Password</label>
+        </div>
+        <div>
+          <div id="pass_error">Please fill up your Password</div>
+        </div>
+        <div class="user-box d-flex align-items-center">
+          <input
+            type="password"
+            id="confirm_password"
+            name="confirm_password"
+            required
+          />
+          <i
+            class="fa fa-eye"
+            id="togglePassword"
+            aria-hidden="true"
+            style="border-bottom: 1px solid #243b55; margin-bottom: 0.1rem"
+          ></i>
+          <label for="confirm_password">Confirm Password</label>
+        </div>
+        <div>
+          <div id="passconfirm_error">
+            Please fill up your confirmation Password
+          </div>
+        </div>
+        <div>
+          <a onclick="return validated()" href="#" id="signup">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> Sign Up
+          </a>
+        </div>
+      </form>
+    </div>
+    <script src="./SignUp.js"></script>
+    <script>
+      const togglePasswordIcons = document.querySelectorAll(".fa-eye");
+
+      togglePasswordIcons.forEach((icon) => {
+        icon.addEventListener("click", function () {
+          const passwordInput = icon.previousElementSibling;
+
+          if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+          } else {
+            passwordInput.type = "password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
