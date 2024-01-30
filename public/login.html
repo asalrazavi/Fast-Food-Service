@@ -1,68 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sign in</title>
-    <link href="./login.css" rel="stylesheet" />
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-</head>
+    <link href="../assest/css/login.css" rel="stylesheet" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="login-box">
-        <h2>Login</h2>
-        <form action="home.html" autocomplete="off">
-            <!-- <div id="success_message" style="display: none; color: green;">
+      <h2>Login</h2>
+      <form action="./landing.html" autocomplete="off">
+        <!-- <div id="success_message" style="display: none; color: green;">
                 Login successful! Redirecting...
             </div> -->
-            <div class="user-box">
-                <input type="email" id="email" name="email" required />
-                <div id="email_error">Please fill up your Email</div>
-                <label for="email">Email</label>
-            </div>
-            <div class="user-box d-flex align-items-center">
-                <input type="password" id="password" name="password" required />
-                <i class="fa fa-eye" id="togglePassword" aria-hidden="true" style="
-                border-bottom: 1px solid rgba(0, 0, 0, 0.78);
-                margin-bottom: 0.1rem;
-              "></i>
-                <label for="password">Password</label>
-            </div>
-            <div>
-                <div id="pass_error">Please fill up your Password</div>
-            </div>
-            <div>
-                <div>
-                    <a onclick="return validated()" type="submit" href="#" id="login">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span> Login
-                    </a>
-                    <a class="mt-1" href="./SignUp.html">Sign Up?</a>
-                </div>
-        </form>
+        <div class="user-box">
+          <input type="email" id="email" name="email" required />
+          <div id="email_error">Please fill up your Email</div>
+          <label for="email">Email</label>
         </div>
-        <script src="./login.js"></script>
-        <script>
-            const togglePassword = document.getElementById("togglePassword");
-            const passwordInput = document.getElementById("password");
+        <div class="user-box d-flex align-items-center">
+          <input type="password" id="password" name="password" required />
+          <i
+            class="fa fa-eye"
+            id="togglePassword"
+            aria-hidden="true"
+            style="
+              border-bottom: 1px solid rgba(0, 0, 0, 0.78);
+              margin-bottom: 0.1rem;
+            "
+          ></i>
+          <label for="password">Password</label>
+        </div>
+        <div>
+          <div id="pass_error">Please fill up your Password</div>
+        </div>
+        <div>
+          <div>
+            <a onclick="return validated()" type="submit" href="#" id="login">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span> Login
+            </a>
+            <a class="mt-1" href="./SignUp.html">Sign Up?</a>
+          </div>
+        </div>
+      </form>
+      <script src="../assest/js/login.js"></script>
+      <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("password");
 
-            togglePassword.addEventListener("click", function() {
-                if (passwordInput.type === "password") {
-                    passwordInput.type = "text";
-                    togglePassword.classList.remove("fa-eye");
-                    togglePassword.classList.add("fa-eye-slash");
-                } else {
-                    passwordInput.type = "password";
-                    togglePassword.classList.remove("fa-eye-slash");
-                    togglePassword.classList.add("fa-eye");
-                }
-            });
-        </script>
-</body>
-
+        togglePassword.addEventListener("click", function () {
+          if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            togglePassword.classList.remove("fa-eye");
+            togglePassword.classList.add("fa-eye-slash");
+          } else {
+            passwordInput.type = "password";
+            togglePassword.classList.remove("fa-eye-slash");
+            togglePassword.classList.add("fa-eye");
+          }
+        });
+      </script>
+    </div>
+  </body>
 </html>
