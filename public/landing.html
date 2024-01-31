@@ -39,13 +39,16 @@
       href="../assest/img/Kiyume_logo-1.svg"
     />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="../assest/css/landing.css" />
   </head>
 
   <body>
     <!-- Navbar -->
     <!-- Navigation-->
-    <header id="header" class="fixed-top">
+    <div id="navbar-container" include-html="./navbar.html"></div>
+    <!-- <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center">
         <a href="index.html">
           <svg
@@ -95,8 +98,8 @@
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
         <!-- .navbar -->
-      </div>
-    </header>
+    <!-- </div>
+    </header> -->
     <section id="hero" class="hero d-flex align-items-center section-bg">
       <div class="container">
         <div class="row justify-content-between gy-5">
@@ -131,13 +134,10 @@
     </section>
 
     <!-- Vendor JS Files -->
-    <script src="../assest/vendor/aos/aos.js"></script>
-    <script src="../assest/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assest/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="../assest/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="../assest/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="../assest/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="../assest/vendor/php-email-form/validate.js"></script>
-    <script src="../assest/css/landing.css"></script>
+    <script>
+      $.get("./navbar.html", function (data) {
+        $("#navbar-container").replaceWith(data);
+      });
+    </script>
   </body>
 </html>
